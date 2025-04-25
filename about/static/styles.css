@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+    background-color: rgb(96, 216, 239);
+}
+
+main {
+    background-color: rgb(250, 250, 250);
+}
+
+#contact-section {
+    background-color: rgb(96, 216, 239);
+}
+
+footer {
+    line-height: 5px;
+}
