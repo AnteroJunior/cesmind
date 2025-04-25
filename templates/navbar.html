@@ -11,7 +11,7 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'home.index' %}">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="medias">Mídias</a>
+                    <a class="nav-link" href="{% url 'media.index' %}">Mídias</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'schedule.index' %}">Agendamento</a>
@@ -21,7 +21,7 @@
                 </li>
                 {% if request.session.user_id  %}
                     <li class="nav-item">
-                        <a class="nav-link" href="">Adicionar conteúdo</a>
+                        <a class="nav-link" href="{% url 'media.adicionar' %}">Adicionar conteúdo</a>
                     </li>
                     <li class='dropdown'>
                         <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

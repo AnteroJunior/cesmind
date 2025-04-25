@@ -10,7 +10,6 @@ class Schedule(models.Model):
     period = models.CharField(max_length=20)
     reason = models.TextField()
     availability = models.CharField(max_length=100)
-    psychologist = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)

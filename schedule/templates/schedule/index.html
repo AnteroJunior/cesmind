@@ -12,11 +12,11 @@
         <p class="text-center mb-4">Preencha o formulário abaixo para solicitar um atendimento psicológico com os
             nossos profissionais. Estamos aqui para te apoiar!</p>
 
-            <form action="#" method="POST" class="d-flex flex-column gap-3">
-
+            <form action="{% url 'schedule.agendar' %}" method="POST" class="d-flex flex-column gap-3">
+            {% csrf_token %}
             <div class="form-group col-md-6">
                 <label for="nome">Nome Completo</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <input type="text" class="form-control" id="nome" name="name" required>
             </div>
 
             <div class="form-group col-md-6">
@@ -25,33 +25,33 @@
             </div>
 
             <div class="form-group col-md-6">
-                <label for="telefone">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" required>
+                <label for="phone">Telefone</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
             </div>
 
             <div class="form-group col-md-6">
-                <label for="nome">Matrícula</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <label for="matricula">Matrícula</label>
+                <input type="text" class="form-control" id="matricula" name="matricula" required>
             </div>
 
             <div class="form-group col-md-6">
-                <label for="nome">Curso</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <label for="course">Curso</label>
+                <input type="text" class="form-control" id="course" name="course" required>
             </div>
 
             <div class="form-group col-md-6">
-                <label for="nome">Período</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <label for="period">Período</label>
+                <input type="text" class="form-control" id="period" name="period" required>
             </div>
 
             <div class="form-group">
-                <label for="motivo">Motivo do Atendimento</label>
-                <textarea class="form-control" id="motivo" name="motivo" rows="4" required></textarea>
+                <label for="reason">Motivo do Atendimento</label>
+                <textarea class="form-control" id="reason" name="reason" rows="4" required></textarea>
             </div>
 
             <div class="form-group">
-                <label for="disponibilidade">Qual a sua disponibilidade para atendimento?</label>
-                <input type="text" class="form-control" id="disponibilidade" name="disponibilidade" required>
+                <label for="availability">Qual a sua disponibilidade para atendimento?</label>
+                <input type="text" class="form-control" id="availability" name="availability" required>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block mt-4">Enviar Solicitação</button>

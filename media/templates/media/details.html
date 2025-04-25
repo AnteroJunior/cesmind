@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}CESMIND {{ media.title }}{% endblock  %}
+
+{% load static %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ media.title }}</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <p><strong>Autor:</strong> {{ media.author.name }}</p>
+            <p><strong>Tipo de Mídia:</strong> {{ media.mediaType }}</p>
+            <p><strong>Conteúdo:</strong> {{ media.content }}</p>
+            <p><strong>Data de Criação:</strong> {{ media.created_at }}</p>
+            <p><strong>Última Atualização:</strong> {{ media.updated_at }}</p>
+
+            <!-- Exibição do arquivo de acordo com o tipo de mídia -->
+            {% if media.mediaType == 'video' %}
+            <div class="mt-4">
+                <h5>Vídeo</h5>
+                <iframe width="560" height="315" src="{{ media.url }}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            {% elif media.mediaType == 'podcast' %}
+            <div class="mt-4">
+                <h5>Arquivo</h5>
+                <a href="{{ media.file.url }}" class="btn btn-primary" download>Baixar Arquivo</a>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ media.thumbnail.url }}" class="card-img-top" alt="{{ media.title }}" width="300" height="300">
+                <div class="card-body">
+                    <h5 class="card-title">{{ media.title }}</h5>
+                    <p class="card-text">{{ media.content|truncatewords:20 }}</p>
+                    <a href="#" class="btn btn-primary">Compartilhar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

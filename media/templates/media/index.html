@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+{% block title %}CESMIND - Mídias{% endblock %}
+
+{% block content %}
+<main class="container my-5 bg-white">
+    <div class="d-flex gap-2 justify-content-center align-items-center mb-3">
+        <a href="{% url 'media.type' type='artigo' %}" class="btn btn-warning">Artigos</a>
+        <a href="{% url 'media.type' type='video' %}" class="btn btn-warning">Vídeos</a>
+        <a href="{% url 'media.type' type='podcast' %}" class="btn btn-warning">Podcasts</a>
+    </div>
+    <div>
+        <form>
+            <div class="d-flex gap-2 justify-content-center align-items-center">
+                <input type="text" class="form-control w-50" placeholder="Pesquisar" aria-label="Pesquisar"
+                    name="pesquisar">
+                <button class="btn btn-primary w-25">Pesquisar</button>
+            </div>
+        </form>
+    </div>
+    <section class='mt-5'>
+        {% for media in medias %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ media.thumbnail.url }}" class="rounded-start" alt="Media thumbnail" width="300" height="300">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ media.title }}</h5>
+                            <p class="card-text">{{ media.content|truncatechars:50 }}</p>
+                            <p class="card-text"><small class="text-muted">Publicado em {{ media.created_at }}</small>
+                            </p>
+
+                            <div class="d-flex justify-content-end">
+                                <a href="{% url 'media.detail' media.id %}" class="btn btn-primary">Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-center text-muted mt-3">Nenhuma mídia encontrada.</p>
+        {% endfor %}
+    </section>
+</main>
+{% endblock content %}
