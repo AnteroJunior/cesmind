@@ -26,73 +26,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto d-flex align-items-center gap-2">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Início</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home.index' %}">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Mídias</a>
+                        <a class="nav-link" href="medias">Mídias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Agendamento</a>
+                        <a class="nav-link" href="{% url 'schedule.index' %}">Agendamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about.index' %}">Sobre</a>
                     </li>
                     <li class="nav-item btn btn-warning">
-                        <a class="nav-link">Login</a>
+                        <a class="nav-link" href="login">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="py-5">
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'undraw_audio-player_7uwh.svg' %}" width="600" height="400"
-                        class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                        <p>Proin aliquam tortor nec risus tempor, nec faucibus ligula faucibus. Suspendisse vitae elit
-                            non est egestas pellentesque</p>
-                    </div>
-                </div>
-                <div class="carousel-item active">
-                    <img src="{% static 'undraw_audio-player_7uwh.svg' %}" width="600" height="400"
-                        class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                        <p>Proin aliquam tortor nec risus tempor, nec faucibus ligula faucibus. Suspendisse vitae elit
-                            non est egestas pellentesque</p>
-                    </div>
-                </div>
-                <div class="carousel-item active">
-                    <img src="{% static 'undraw_audio-player_7uwh.svg' %}" width="600" height="400"
-                        class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                        <p>Proin aliquam tortor nec risus tempor, nec faucibus ligula faucibus. Suspendisse vitae elit
-                            non est egestas pellentesque</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
+    <main class="">
         <section id="about-cesmind" class="container py-5 text-center">
             <div class="grid justify-content-around">
                 <div class="row">
@@ -100,10 +53,7 @@
                         alt="" />
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
                         <h2>Ouça seus podcasts preferidos sobre saúde mental</h2>
-                        <p>Quisque auctor sodales massa at rutrum. Nulla non posuere ipsum. Ut dapibus nibh ut cursus
-                            eleifend. Nullam gravida velit in tellus elementum lobortis. Cras sapien nulla, faucibus in
-                            odio
-                            et, vulputate luctus justo.</p>
+                        <p>Explore uma seleção de podcasts sobre saúde mental, com temas variados para apoiar seu bem-estar. Descubra dicas, entrevistas e discussões para ajudar a compreender e melhorar sua saúde emocional.</p>
                     </div>
                 </div>
             </div>
@@ -112,10 +62,7 @@
                 <div class="row">
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
                         <h2>Aproveite o nosso conteúdo para se reconectar consigo mesmo</h2>
-                        <p>Quisque auctor sodales massa at rutrum. Nulla non posuere ipsum. Ut dapibus nibh ut cursus
-                            eleifend. Nullam gravida velit in tellus elementum lobortis. Cras sapien nulla, faucibus in
-                            odio
-                            et, vulputate luctus justo.</p>
+                        <p>Encontre materiais que ajudam a refletir, relaxar e fortalecer seu bem-estar emocional. Desde artigos até práticas de mindfulness, oferecemos recursos para você se reconectar e cuidar de sua saúde mental.</p>
                     </div>
                     <img src="{% static 'undraw_everyday-life.svg' %}" class="col-lg-6" width="600" height="300"
                         alt="" />
@@ -127,9 +74,7 @@
                         alt="" />
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
                         <h2>Quer aprender a meditar? Veja nossos artigos</h2>
-                        <p>Quisque auctor sodales massa at rutrum. Nulla non posuere ipsum. Ut dapibus nibh ut cursus
-                            eleifend. Nullam gravida velit in tellus elementum lobortis. Cras sapien nulla, faucibus in
-                            odio et, vulputate luctus justo.</p>
+                        <p>Explore nossos artigos sobre meditação e descubra como essa prática pode ajudar a melhorar sua saúde mental. Encontre dicas, técnicas e orientações para começar sua jornada de mindfulness de forma simples e eficaz.</p>
                     </div>
                 </div>
             </div>
@@ -137,7 +82,7 @@
 
         <section class="py-5 text-center border container rounded" id="contact-section">
             <h2>Precisa de uma ajuda especializada?</h2>
-            <p>Se você precisa de ajuda especializada, entre em contato conosco e preencha o formulário abaixo</p>
+            <p>Se você precisa de ajuda especializada, entre em contato conosco e preencha o formulário abaixo.</p>
             <a href="#" class="btn btn-warning">Clique aqui</a>
         </section>
     </main>
@@ -145,11 +90,11 @@
     {% block content %}
     {% endblock content %}
 
-    <footer class="fixed-bottom w-100">
+    <footer class="w-100 pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center text-secondary">
-                    <p>Cesmind &copy; 2025</p>
+                    <p>Cesmind&copy; 2025</p>
                     <p>Developed by Antero Junior</p>
                 </div>
             </div>
