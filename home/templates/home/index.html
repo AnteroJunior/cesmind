@@ -1,110 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cesmind</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+{% block title %}CESMIND{% endblock %}
 
-
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid container">
-            <a class="navbar-brand" href="#">Cesmind</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto d-flex align-items-center gap-2">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home.index' %}">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="medias">Mídias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'schedule.index' %}">Agendamento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about.index' %}">Sobre</a>
-                    </li>
-                    <li class="nav-item btn btn-warning">
-                        <a class="nav-link" href="login">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="">
-        <section id="about-cesmind" class="container py-5 text-center">
-            <div class="grid justify-content-around">
-                <div class="row">
-                    <img src="{% static 'undraw_audio-player_7uwh.svg' %}" class="col-lg-6" width="600" height="300"
-                        alt="" />
-                    <div class="col-lg-6 d-flex flex-column justify-content-center">
-                        <h2>Ouça seus podcasts preferidos sobre saúde mental</h2>
-                        <p>Explore uma seleção de podcasts sobre saúde mental, com temas variados para apoiar seu bem-estar. Descubra dicas, entrevistas e discussões para ajudar a compreender e melhorar sua saúde emocional.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid justify-content-around grid-reverse py-5">
-                <div class="row">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center">
-                        <h2>Aproveite o nosso conteúdo para se reconectar consigo mesmo</h2>
-                        <p>Encontre materiais que ajudam a refletir, relaxar e fortalecer seu bem-estar emocional. Desde artigos até práticas de mindfulness, oferecemos recursos para você se reconectar e cuidar de sua saúde mental.</p>
-                    </div>
-                    <img src="{% static 'undraw_everyday-life.svg' %}" class="col-lg-6" width="600" height="300"
-                        alt="" />
-                </div>
-            </div>
-            <div class="grid justify-content-around grid-reverse py-5">
-                <div class="row">
-                    <img src="{% static 'undraw_mindfulness.svg' %}" class="col-lg-6" width="600" height="300"
-                        alt="" />
-                    <div class="col-lg-6 d-flex flex-column justify-content-center">
-                        <h2>Quer aprender a meditar? Veja nossos artigos</h2>
-                        <p>Explore nossos artigos sobre meditação e descubra como essa prática pode ajudar a melhorar sua saúde mental. Encontre dicas, técnicas e orientações para começar sua jornada de mindfulness de forma simples e eficaz.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-5 text-center border container rounded" id="contact-section">
-            <h2>Precisa de uma ajuda especializada?</h2>
-            <p>Se você precisa de ajuda especializada, entre em contato conosco e preencha o formulário abaixo.</p>
-            <a href="#" class="btn btn-warning">Clique aqui</a>
-        </section>
-    </main>
-
-    {% block content %}
-    {% endblock content %}
-
-    <footer class="w-100 pt-5">
-        <div class="container">
+{% block content %}
+<main class="">
+    <section id="about-cesmind" class="container py-5 text-center">
+        <div class="grid justify-content-around">
             <div class="row">
-                <div class="col-12 text-center text-secondary">
-                    <p>Cesmind&copy; 2025</p>
-                    <p>Developed by Antero Junior</p>
+                <img src="{% static 'undraw_audio-player_7uwh.svg' %}" class="col-lg-6" width="600" height="300"
+                    alt="" />
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h2>Ouça seus podcasts preferidos sobre saúde mental</h2>
+                    <p>Explore uma seleção de podcasts sobre saúde mental, com temas variados para apoiar seu bem-estar. Descubra dicas, entrevistas e discussões para ajudar a compreender e melhorar sua saúde emocional.</p>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
+        <div class="grid justify-content-around grid-reverse py-5">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h2>Aproveite o nosso conteúdo para se reconectar consigo mesmo</h2>
+                    <p>Encontre materiais que ajudam a refletir, relaxar e fortalecer seu bem-estar emocional. Desde artigos até práticas de mindfulness, oferecemos recursos para você se reconectar e cuidar de sua saúde mental.</p>
+                </div>
+                <img src="{% static 'undraw_everyday-life.svg' %}" class="col-lg-6" width="600" height="300"
+                    alt="" />
+            </div>
+        </div>
+        <div class="grid justify-content-around grid-reverse py-5">
+            <div class="row">
+                <img src="{% static 'undraw_mindfulness.svg' %}" class="col-lg-6" width="600" height="300"
+                    alt="" />
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h2>Quer aprender a meditar? Veja nossos artigos</h2>
+                    <p>Explore nossos artigos sobre meditação e descubra como essa prática pode ajudar a melhorar sua saúde mental. Encontre dicas, técnicas e orientações para começar sua jornada de mindfulness de forma simples e eficaz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
-
-</html>
+    <section class="py-5 text-center border container rounded" id="contact-section">
+        <h2>Precisa de uma ajuda especializada?</h2>
+        <p>Se você precisa de ajuda especializada, entre em contato conosco e preencha o formulário abaixo.</p>
+        <a href="{% url 'schedule.index' %}" class="btn btn-warning">Clique aqui</a>
+    </section>
+</main>
+{% endblock %}

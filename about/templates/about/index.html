@@ -1,118 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cesmind - Sobre nós</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+{% block title %}CESMIND - Sobre nós{% endblock %}
 
-
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid container">
-            <a class="navbar-brand" href="#">Cesmind</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto d-flex align-items-center gap-2">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'home.index' %}">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="medias">Mídias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="schedule">Agendamento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about.index' %}">Sobre</a>
-                    </li>
-                    <li class="nav-item btn btn-warning">
-                        <a class="nav-link" href="login">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="">
-        <section id="about-cesmind" class="container py-5 text-center">
-            <!-- Conteúdo Principal -->
-            <div class="container my-5">
-                <div class="row">
-                    <div class="col-12 text-justify">
-                        <h1 class="text-center mb-4">Sobre Nós</h1>
-                        <p class="lead text-center mb-4">Bem-vindo ao Cesmind – Seu Espaço de Apoio e Crescimento Pessoal</p>
-                        <p>Nosso objetivo é oferecer suporte acessível e prático para aqueles que buscam cuidar de sua
-                            saúde mental. Sabemos que o bem-estar emocional é fundamental para uma vida equilibrada e
-                            produtiva, e por isso criamos este espaço para ajudar você a se reconectar consigo mesmo,
-                            aprender mais sobre saúde mental e ter acesso a recursos que podem transformar sua vida.</p>
-
-                        <h3 class="mt-5">O que oferecemos</h3>
-                        <ul>
-                            <p><strong>Apoio Profissional:</strong> Conecte-se com psicólogos, terapeutas e outros
-                                especialistas qualificados prontos para te ajudar em sua jornada de autoconhecimento e
-                                cura.</p>
-                            <p><strong>Recursos Educacionais:</strong> Encontre artigos, vídeos, podcasts e materiais
-                                que abordam temas como ansiedade, depressão, estresse e bem-estar emocional.</p>
-                            <p><strong>Práticas de Bem-Estar:</strong> Acesse ferramentas para meditação, mindfulness e
-                                relaxamento que podem ser incorporadas no seu dia a dia para reduzir o estresse e
-                                melhorar sua qualidade de vida.</p>
-                            <p><strong>Comunidade e Suporte:</strong> Participe de fóruns, grupos de discussão e
-                                eventos online, onde você pode compartilhar experiências e aprender com outras pessoas
-                                que estão passando por desafios semelhantes.</p>
-                        </ul>
-
-                        <h3 class="mt-5">Nossa Filosofia</h3>
-                        <p>Acreditamos que todos têm o direito de buscar uma vida mais equilibrada e saudável
-                            mentalmente. Nosso compromisso é oferecer um ambiente seguro e acolhedor, onde você possa
-                            explorar diferentes caminhos para o autoconhecimento e bem-estar. Estamos aqui para caminhar
-                            ao seu lado, oferecendo apoio, informações confiáveis e recursos de qualidade.</p>
-
-                        <h3 class="mt-5">Nossa Equipe</h3>
-                        <p>Somos uma equipe de profissionais dedicados, incluindo psicólogos, coaches, educadores e
-                            especialistas em saúde mental, que têm como objetivo criar um espaço digital onde a saúde
-                            mental seja tratada com a mesma seriedade e respeito que a saúde física.</p>
-
-                        <h3 class="mt-5">Nossa Visão</h3>
-                        <p>Transformar o cuidado com a saúde mental em algo acessível, descomplicado e empoderador para
-                            todos, criando uma rede de apoio que contribua para a construção de uma sociedade mais
-                            saudável e consciente.</p>
-
-                        <h3 class="mt-5 text-center">Junte-se a nós e comece sua jornada de bem-estar hoje!</h3>
-                    </div>
-                </div>
-            </div>
-    </main>
-
-    {% block content %}
-    {% endblock content %}
-
-    <footer class="w-100 pt-5">
-        <div class="container">
+{% block content %}
+<main class="">
+    <section id="about-cesmind" class="container py-5 text-center">
+        <div class="container my-5">
             <div class="row">
-                <div class="col-12 text-center text-secondary">
-                    <p>Cesmind&copy; 2025</p>
-                    <p>Developed by Antero Junior</p>
+                <div class="col-12 text-justify">
+                    <h1 class="text-center mb-4">Sobre Nós</h1>
+                    <p class="lead text-center mb-4">Bem-vindo ao Cesmind – Seu Espaço de Apoio e Crescimento Pessoal</p>
+                    <p>Nosso objetivo é oferecer suporte acessível e prático para aqueles que buscam cuidar de sua
+                        saúde mental. Sabemos que o bem-estar emocional é fundamental para uma vida equilibrada e
+                        produtiva, e por isso criamos este espaço para ajudar você a se reconectar consigo mesmo,
+                        aprender mais sobre saúde mental e ter acesso a recursos que podem transformar sua vida.</p>
+
+                    <h3 class="mt-5">O que oferecemos</h3>
+                    <ul>
+                        <p><strong>Apoio Profissional:</strong> Conecte-se com psicólogos, terapeutas e outros
+                            especialistas qualificados prontos para te ajudar em sua jornada de autoconhecimento e
+                            cura.</p>
+                        <p><strong>Recursos Educacionais:</strong> Encontre artigos, vídeos, podcasts e materiais
+                            que abordam temas como ansiedade, depressão, estresse e bem-estar emocional.</p>
+                        <p><strong>Práticas de Bem-Estar:</strong> Acesse ferramentas para meditação, mindfulness e
+                            relaxamento que podem ser incorporadas no seu dia a dia para reduzir o estresse e
+                            melhorar sua qualidade de vida.</p>
+                        <p><strong>Comunidade e Suporte:</strong> Participe de fóruns, grupos de discussão e
+                            eventos online, onde você pode compartilhar experiências e aprender com outras pessoas
+                            que estão passando por desafios semelhantes.</p>
+                    </ul>
+
+                    <h3 class="mt-5">Nossa Filosofia</h3>
+                    <p>Acreditamos que todos têm o direito de buscar uma vida mais equilibrada e saudável
+                        mentalmente. Nosso compromisso é oferecer um ambiente seguro e acolhedor, onde você possa
+                        explorar diferentes caminhos para o autoconhecimento e bem-estar. Estamos aqui para caminhar
+                        ao seu lado, oferecendo apoio, informações confiáveis e recursos de qualidade.</p>
+
+                    <h3 class="mt-5">Nossa Equipe</h3>
+                    <p>Somos uma equipe de profissionais dedicados, incluindo psicólogos, coaches, educadores e
+                        especialistas em saúde mental, que têm como objetivo criar um espaço digital onde a saúde
+                        mental seja tratada com a mesma seriedade e respeito que a saúde física.</p>
+
+                    <h3 class="mt-5">Nossa Visão</h3>
+                    <p>Transformar o cuidado com a saúde mental em algo acessível, descomplicado e empoderador para
+                        todos, criando uma rede de apoio que contribua para a construção de uma sociedade mais
+                        saudável e consciente.</p>
+
+                    <h3 class="mt-5 text-center">Junte-se a nós e comece sua jornada de bem-estar hoje!</h3>
                 </div>
             </div>
         </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+</main>
+{% endblock content %}
