@@ -11,6 +11,16 @@
         <a href="{% url 'media.type' type='artigo' %}" class="btn btn-warning">Artigos</a>
         <a href="{% url 'media.type' type='video' %}" class="btn btn-warning">Vídeos</a>
         <a href="{% url 'media.type' type='podcast' %}" class="btn btn-warning">Podcasts</a>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Selecionar autor
+            </button>
+            <ul class="dropdown-menu">
+                {% for user in users %}
+                    <li><a class="dropdown-item" href="{% url 'media.user' user_id=user.id %}">{{ user.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <div>
         <form>

@@ -5,8 +5,9 @@ from home.models import User
 # Create your views here.
 def index(request):
     medias = Media.objects.all()[:5]
+    users = User.objects.all()
 
-    return render(request, 'media/index.html', {'medias': medias})
+    return render(request, 'media/index.html', {'medias': medias, 'users': users})
 
 def adicionar(request):
     if request.method == 'POST':
@@ -29,13 +30,18 @@ def adicionar(request):
     return render(request, 'media/add.html')
 
 def media_detail(request, media_id):
-    # Busca o conteúdo específico pelo ID
     media = get_object_or_404(Media, id=media_id)
-
-    # Passa o objeto 'media' para o template
     return render(request, 'media/details.html', {'media': media})
 
 def media_type(request, type):
+    users = User.objects.all()
     medias = Media.objects.filter(mediaType=type)
 
-    return render(request, 'media/index.html', {'medias': medias})
+    return render(request, 'media/index.html', {'medias': medias, 'users': users})
+
+def media_user(request, user_id):
+    user = User.objects.get(id=user_id)
+    users = User.objects.all()
+    medias = Media.objects.filter(author=user)
+
+    return render(request, 'media/index.html', {'medias': medias, 'users': users})
